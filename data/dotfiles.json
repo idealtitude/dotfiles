@@ -12,11 +12,11 @@
 		"Dev/RES/EDITORCONFIG/.editorconfig"
 	],
 	"folders": [
-		".tmux",
-		".vim",
-		".textadept",
-		".config/blender",
-		".config/micro",
-		".config/VSCodium"
+		".tmux/",
+		".vim/",
+		".textadept/",
+		".config/blender/",
+		".config/micro/",
+		".config/VSCodium/"
 	]
 }

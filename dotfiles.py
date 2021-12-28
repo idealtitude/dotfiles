@@ -13,7 +13,7 @@ import json
 import argparse
 
 # App version
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 # Constants
 EXIT_SUCCESS = 0
@@ -37,8 +37,15 @@ def load_json():
     return json.loads(fc)
 
 def exec_cmd(cmd):
-    res = subprocess.run(cmd)
-    print(res)
+    res = subprocess.Popen(cmd, stdout=subprocess.PIPE, encoding='utf8')
+    while True:
+        output = res.stdout.readline()
+        if output == '' and res.poll() is not None:
+            break
+        if output:
+            print(output.strip())
+    rc = res.poll()
+    return rc
 
 def process_target(target, cmd, opts, src, dest):
     for e in target:
@@ -66,6 +73,7 @@ def main(args):
 
     if args.diffonly:
         cmd = 'diff'
+        opts = '-q'
     else:
         cmd = 'rsync'
         opts = '-rhv'
