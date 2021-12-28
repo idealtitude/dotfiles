@@ -1,1 +1,3 @@
 # dotfiles
+
+My dotfiles, and the Python script to manage it all...

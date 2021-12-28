@@ -1,0 +1,22 @@
+{
+	"source": "/home/stephane/",
+	"dest": "/home/stephane/Documents/PERSO/dotfiles/stephane/",
+	"files": [
+		".bash_aliases",
+		".nanorc",
+		".sqliterc",
+		".bashrc",
+		".gitconfig",
+		".npmrc",
+		".tmux.conf",
+		"Dev/RES/EDITORCONFIG/.editorconfig"
+	],
+	"folders": [
+		".tmux",
+		".vim",
+		".textadept",
+		".config/blender",
+		".config/micro",
+		".config/VSCodium"
+	]
+}
