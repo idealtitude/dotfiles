@@ -17,3 +17,4 @@ folders:
 - ".config/blender/"
 - ".config/micro/"
 - ".config/VSCodium/"
+- ".vscode-oss"

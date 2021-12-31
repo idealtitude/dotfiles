@@ -37,6 +37,9 @@ pcopy() {
 #	xsel -b -o
 #}
 
+# Git session cache
+alias gitcache="git config --global credential.helper 'cache --timeout=3600'"
+
 # ed setup
 alias edp='ed -p"% "'
 

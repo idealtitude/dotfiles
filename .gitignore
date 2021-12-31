@@ -2,6 +2,7 @@ stephane/.config/*
 stephane/.textadept/*
 stephane/.tmux/*
 stephane/.vim/*
+stephane/.vscode-oss/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

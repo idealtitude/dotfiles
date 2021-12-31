@@ -17,6 +17,7 @@
 		".textadept/",
 		".config/blender/",
 		".config/micro/",
-		".config/VSCodium/"
+		".config/VSCodium/",
+        ".vscode-oss/"
 	]
 }

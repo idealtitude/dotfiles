@@ -20,7 +20,7 @@ export PATH
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-
+# npm
 export PATH="$HOME/.npm/bin:$PATH"
 
 # Prompt:
