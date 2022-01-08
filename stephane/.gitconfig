@@ -2,4 +2,4 @@
 	email = idealtitude@gmail.com
 	name = idealtitude
 [credential]
-	helper = cache --timeout=12960000
+	helper = cache --timeout=3600

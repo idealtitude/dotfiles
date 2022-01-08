@@ -43,3 +43,8 @@ indent_size = 4
 [*.yml]
 indent_style = space
 indent_size = 2
+
+# Stylus
+[*.styl]
+indent_style = space
+indent_size = 4
