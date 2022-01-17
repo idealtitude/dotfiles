@@ -5,7 +5,7 @@ alias pudb="updatedb -l 0 -o /home/stephane/.hlocate/hlocate.db -U /home/stephan
 alias ploc="locate -d /home/stephane/.hlocate/hlocate.db"
 
 # Clear screen
-alias cls="tput clear"
+# alias cls="tput clear"
 
 # Clear screen (short version)
 alias c="clear"
@@ -16,9 +16,13 @@ alias lx="exa -l"
 alias la="exa -a"
 alias lxa="exa -la"
 
+# diff with colors
+alias diff="diff --color=always"
+
 # stat shortcuts
 alias stata='stat -c "%a"'
 alias stataa='stat -c "%A %a %n"'
+alias stataz='stat -c "%a %C"'
 
 # Date now YYYY-MM-DD HH:MM:SS
 alias dnow='date +"%Y-%m-%d %H:%M:%S"'
