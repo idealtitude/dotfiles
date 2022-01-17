@@ -9,15 +9,19 @@
 		".gitconfig",
 		".npmrc",
 		".tmux.conf",
-		"Dev/RES/EDITORCONFIG/.editorconfig"
+		"Dev/RES/EDITORCONFIG/.editorconfig",
+		".config/blender/3.0/config/startup.blend",
+		".config/blender/3.0/config/userpref.blend",
+		".config/micro/bindings.json",
+		".config/micro/settings.json",
+		".config/VSCodium/User/keybindings.json",
+		".config/VSCodium/User/settings.json",
+		".config/VSCodium/User/snippets/cpp.json"
 	],
 	"folders": [
 		".tmux/",
 		".vim/",
 		".textadept/",
-		".config/blender/",
-		".config/micro/",
-		".config/VSCodium/",
-        ".vscode-oss/"
+		".vscode-oss/"
 	]
 }
