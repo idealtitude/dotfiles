@@ -1,8 +1,16 @@
-stephane/.config/*
-stephane/.textadept/*
+#stephane/.config/*
+stephane/.textadept/modules/
+stephane/.textadept/themes/
 stephane/.tmux/*
-stephane/.vim/*
-stephane/.vscode-oss/*
+stephane/.vim/autoload/
+stephane/.vim/colors/
+#stephane/.vim/config/
+stephane/.vim/doc/
+stephane/.vim/plugged/
+stephane/.vim/plugin/
+stephane/.vim/spell/
+stephane/.vim/syntax/
+#stephane/.vscode-oss/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

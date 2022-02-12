@@ -41,6 +41,11 @@ pcopy() {
 #	xsel -b -o
 #}
 
+# Calculate
+alias calc=calculate
+calculate() {
+	echo "$*" | bc
+}
 # Git session cache
 alias gitcache="git config --global credential.helper 'cache --timeout=3600'"
 

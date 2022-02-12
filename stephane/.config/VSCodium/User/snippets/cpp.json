@@ -1,0 +1,383 @@
+{
+    "Preproc in": {
+        "prefix": "in",
+        "body": [
+            "#include <$0>"
+        ],
+        "description": "Add empty #include"
+    },
+    "Preproc in2": {
+        "prefix": "in2",
+        "body": [
+            "#include \"$0\""
+        ],
+        "description": "Add empty local #include \"\""
+    },
+    "Preproc ini": {
+        "prefix": "ini",
+        "body": [
+            "#include <iostream>$0"
+        ],
+        "description": "Add #include <iostream>"
+    },
+    "Preproc ins": {
+        "prefix": "ins",
+        "body": [
+            "#include <string>$0"
+        ],
+        "description": "Add #include <string>"
+    },
+    "Preproc inr": {
+        "prefix": "inr",
+        "body": [
+            "#include <regex>$0"
+        ],
+        "description": "Add #include <regex>"
+    },
+    "Preproc inf": {
+        "prefix": "inf",
+        "body": [
+            "#include <fstream>$0"
+        ],
+        "description": "Add #include <fstream>"
+    },
+    "Preproc infs": {
+        "prefix": "infs",
+        "body": [
+            "#include <filesystem>$0"
+        ],
+        "description": "Add #include <filesystem>"
+    },
+    "Preproc int": {
+        "prefix": "int",
+        "body": [
+            "#include <thread>$0"
+        ],
+        "description": "Add #include <thread>"
+    },
+    "Preproc inc": {
+        "prefix": "inc",
+        "body": [
+            "#include <chrono>$0"
+        ],
+        "description": "Add #include <chrono>"
+    },
+    "Preproc map": {
+        "prefix": "inm",
+        "body": [
+            "#include <map>$0"
+        ],
+        "description": "Add #include <map>"
+    },
+    "Preproc vector": {
+        "prefix": "inv",
+        "body": [
+            "#include <vector>$0"
+        ],
+        "description": "Add #include <vector>"
+    },
+    "std::cout": {
+        "prefix": "co",
+        "body": [
+            "std::cout << $0"
+        ],
+        "description": "Insert std::cout"
+    },
+    "std::endl": {
+        "prefix": "en",
+        "body": [
+            "<< std::endl;$0"
+        ],
+        "description": "Insert std::endl;"
+    },
+    "std::cout std::endl": {
+        "prefix": "ce",
+        "body": [
+            "std::cout << $0 << std::endl;"
+        ],
+        "description": "Insert std::cout std::endl;"
+    },
+    "std::string": {
+        "prefix": "str",
+        "body": [
+            "std::string $0"
+        ],
+        "description": "Add std::string"
+    },
+    "std prefix": {
+        "prefix": "s",
+        "body": [
+            "std::$0"
+        ],
+        "description": "Add std:: prefix"
+    },
+    "For loop": {
+        "prefix": "for",
+        "body": [
+            "for (int i = 0; i < $0; ++i)\n{\n\t\n}\n"
+        ],
+        "description": "Add a for loop"
+    },
+    "For in": {
+        "prefix": "fore",
+        "body": [
+            "for (auto &e : $0)\n{\n\t\n}\n"
+        ],
+        "description": "Add for e in i"
+    },
+    "If stmt": {
+        "prefix": "if",
+        "body": [
+            "if ($0)\n{\n\t\n}\n"
+        ],
+        "description": "Add if statement"
+    },
+    "If else stmt": {
+        "prefix": "ife",
+        "body": [
+            "if ($0)\n{\n\t\n}\nelse\n{\n\t\n}\n"
+        ],
+        "description": "Add if else statement"
+    },
+    "If else if stmt": {
+        "prefix": "ifei",
+        "body": [
+            "if ($0)\n{\n\t\n}\nelse if ()\n{\n\t\n}\n"
+        ],
+        "description": "Add if else if statement"
+    },
+    "If else if else stmt": {
+        "prefix": "ifeie",
+        "body": [
+            "if ($0)\n{\n\t\n}\nelse if ()\n{\n\t\n}\nelse\n{\n\t\n}\n"
+        ],
+        "description": "Add if else if else statement"
+    },
+    "Else stmt": {
+        "prefix": "el",
+        "body": [
+            "else\n{\n\t$0\n}\n"
+        ],
+        "description": "Add else statement"
+    },
+    "Else if stmt": {
+        "prefix": "eli",
+        "body": [
+            "else if ($0)\n{\n\t\n}\n"
+        ],
+        "description": "Add else if statement"
+    },
+    "While loop": {
+        "prefix": "whi",
+        "body": [
+            "while ($0)\n{\n\t\n}\n"
+        ],
+        "description": "Add a while loop"
+    },
+    "Switch": {
+        "prefix": "swi",
+        "body": [
+            "switch ($0)\n{\n\tcase :\n\t\t\n\t\tbreak;\n}\n"
+        ],
+        "description": "Add a switch"
+    },
+    "New class hdr": {
+        "prefix": "cls1",
+        "body": [
+            "class ${1:cn}",
+            "{",
+            "  public:",
+            "\t${1:cn}();",
+            "\t~${1:cn}();",
+            "  private:",
+            "\t$0",
+            "};",
+            "\n"
+        ],
+        "description": "Add a new class header"
+    },
+    "New class cpp": {
+        "prefix": "cls2",
+        "body": [
+            "${1:cn}::${1:cn}() : $0\n{\n}\n",
+            "${1:cn}::~${1:cn}()\n{\n}\n"
+        ],
+        "description": "Add"
+    },
+    "Header guard": {
+        "prefix": "hdr",
+        "body": [
+            "// file.h",
+            "#ifndef ${1:hn}_H",
+            "#define ${1:hn}_H",
+            "\n$0\n",
+            "#endif\n"
+        ],
+        "description": "Add header guard"
+    },
+    "New struct": {
+        "prefix": "stc",
+        "body": [
+            "struct $0\n{\n\t\n};\n"
+        ],
+        "description": "Add a new struct"
+    },
+    "Std vector": {
+        "prefix": "vec",
+        "body": [
+            "std::vector<$0>"
+        ],
+        "description": "Add a std::vector"
+    },
+    "Std map": {
+        "prefix": "map",
+        "body": [
+            "std::map<$0, >"
+        ],
+        "description": "Add a std::map"
+    },
+    "Template": {
+        "prefix": "tpl",
+        "body": [
+            "template <typename $0>"
+        ],
+        "description": "Add a template"
+    },
+    "Thread sleep sec": {
+        "prefix": "ths",
+        "body": [
+            "std::this_thread::sleep_for(std::chrono::seconds($0))"
+        ],
+        "description": "Add thread sleep seconds"
+    },
+    "Thread sleep millisec": {
+        "prefix": "thm",
+        "body": [
+            "std::this_thread::sleep_for(std::chrono::milliseconds($0))"
+        ],
+        "description": "Add thread sleep milliseconds"
+    },
+    "Getline": {
+        "prefix": "gl",
+        "body": [
+            "std::getline(std::cin, $0);"
+        ],
+        "description": "Add std::getline"
+    },
+    "Vec iter": {
+        "prefix": "vecit",
+        "body": [
+            "std::vector<${1:vt}>::iterator $0"
+        ],
+        "description": "Add a vector iterator"
+    },
+    "Empty for1": {
+        "prefix": "for1",
+        "body": [
+            "for (${1:fe}; ${1:fe}; ++${1:fe})\n{\n\t$0\n}\n"
+        ],
+        "description": "Add an empty for loop (ver. 1)"
+    },
+    "Empty for2": {
+        "prefix": "for2",
+        "body": [
+            "for ( ; ; )\n{\n\t$0\n}\n"
+        ],
+        "description": "Add an empty for loop (ver. 2)"
+    },
+    "Vec iter loop": {
+        "prefix": "vecitl",
+        "body": [
+            "for (std::vector<${1:vt}>::iterator ${2:itn} = ${3:vn}.begin() ; ${2:itn} != ${3:vn}.end(); ++${2:itn})\n{\n",
+            "\t*${2:itn} $0;",
+            "}\n"
+        ],
+        "description": "Add vector iterator for loop"
+    },
+    "Map iter": {
+        "prefix": "mapit",
+        "body": [
+            "std::map<c${1:mt}, >::iterator $0"
+        ],
+        "description": "Add"
+    },
+    "Map iter loop": {
+        "prefix": "mapitl",
+        "body": [
+            "for (std::map<${1:mto}, ${2:mtt}>::iterator ${3:itn} = ${4:vn}.begin(); ${3:itn} != ${4:vn}.end(); ++${3:itn})\n{\n",
+            "\t${3:itn}->first << ${3:itn}->second $0;\n",
+            "}\n"
+        ],
+        "description": "Add vector iterator for loop"
+    },
+    "Lambda": {
+        "prefix": "l",
+        "body": [
+            "[$0}(){}"
+        ],
+        "description": "Add a Lambda"
+    },
+    "Shared ptr": {
+        "prefix": "sptr",
+        "body": [
+            "std::shared_ptr<$0>"
+        ],
+        "description": "Add a shared pointer"
+    },
+    "Unique ptr": {
+        "prefix": "uptr",
+        "body": [
+            "std::unique-ptr<$0>"
+        ],
+        "description": "Add unique pointer"
+    },
+    "Make shared ptr": {
+        "prefix": "mksptr",
+        "body": [
+            "std::make_shared<${1:pt}>($0)"
+        ],
+        "description": "Make shared pointer"
+    },
+    "Make shared ptr long": {
+        "prefix": "mksptrl",
+        "body": [
+            "std::shared_ptr<${1:pt> ${2:pn} = std::make_shared<${1:pt}>($0)"
+        ],
+        "description": "Make shared pointer long"
+    },
+    "Make unique ptr": {
+        "prefix": "mkuptr",
+        "body": [
+            "std::make_unique<${1:pt}>($0)"
+        ],
+        "description": "Make unique pointer"
+    },
+    "Make unique ptr long": {
+        "prefix": "mkuptrl",
+        "body": [
+            "std::unique_ptr<${1:pt> ${2:pn} = std::make_unique<${1:pt}>($0)"
+        ],
+        "description": "Make shared pointer long"
+    },
+    "New func": {
+        "prefix": "def",
+        "body": [
+            "${1:rt} ${2:fn}()\n{\t$0\n}\n"
+        ],
+        "description": "Add a new function"
+    },
+    "Main func": {
+        "prefix": "ma1",
+        "body": [
+            "int main(int argc, char **argv)\n{\n\t$0\n\treturn 0;\n}\n"
+        ],
+        "description": "Add the main function"
+    },
+    "Main func empty": {
+        "prefix": "ma2",
+        "body": [
+            "int main()\n{\n\t$0\n}\n"
+        ],
+        "description": "Add an empty main function"
+    },
+}

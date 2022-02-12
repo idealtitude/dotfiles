@@ -1,0 +1,9 @@
+{
+    "colorscheme": "one-dark",
+    "ignorecase": true,
+    "rmtrailingws": true,
+    "savecursor": true,
+    "softwrap": true,
+    "tabmovement": true,
+    "tabstospaces": true
+}

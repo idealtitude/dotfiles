@@ -10,6 +10,8 @@
 		".npmrc",
 		".tmux.conf",
 		"Dev/RES/EDITORCONFIG/.editorconfig",
+		".config/i3/config",
+		".config/i3status/config",
 		".config/blender/3.0/config/startup.blend",
 		".config/blender/3.0/config/userpref.blend",
 		".config/micro/bindings.json",
@@ -21,7 +23,6 @@
 	"folders": [
 		".tmux/",
 		".vim/",
-		".textadept/",
-		".vscode-oss/"
+		".textadept/"
 	]
 }
