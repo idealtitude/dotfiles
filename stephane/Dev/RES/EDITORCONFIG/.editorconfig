@@ -48,3 +48,8 @@ indent_size = 2
 [*.styl]
 indent_style = space
 indent_size = 4
+
+# Haskell
+[*.hs]
+indent_style = space
+indent_size = 2

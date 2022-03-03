@@ -1,5 +1,5 @@
 # Personnel UpdateDB
-alias pudb="updatedb -l 0 -o /home/stephane/.hlocate/hlocate.db -U /home/stephane"
+alias plocu="updatedb -l 0 -o /home/stephane/.hlocate/hlocate.db -U /home/stephane"
 
 # Personnel Locate
 alias ploc="locate -d /home/stephane/.hlocate/hlocate.db"
@@ -26,6 +26,12 @@ alias stataz='stat -c "%a %C"'
 
 # Date now YYYY-MM-DD HH:MM:SS
 alias dnow='date +"%Y-%m-%d %H:%M:%S"'
+
+# Ranger, cd on exit (requires file “~/.rangerdir”)
+alias rr='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+# Check shell, subshells (doesn't work!)
+# alias shsubsh='[[ "$$" -eq "$BASHPID" ]] && printf "%s\n" "Shell, not subshell" || printf "%s\n" "Subshell, not shell"'
 
 # Play medias
 alias play="ffplay -nodisp -autoexit"

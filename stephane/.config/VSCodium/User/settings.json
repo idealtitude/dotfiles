@@ -19,7 +19,6 @@
     "editor.semanticHighlighting.enabled": true,
     "workbench.preferredDarkColorTheme": "Default Light+",
     "window.autoDetectColorScheme": true,
-    "window.zoomLevel": 1,
     "editor.detectIndentation": false,
     "editor.renderControlCharacters": false,
     "python.linting.mypyPath": "/usr/bin/mypy",
@@ -579,7 +578,6 @@
             ]
         }
     },
-    "editor.fontSize": 13,
     "debug.console.fontSize": 13,
     "terminal.integrated.fontSize": 13,
     "python.linting.pylintPath": "/usr/bin/pylint",
@@ -599,4 +597,7 @@
     "python.formatting.blackPath": "/usr/bin/black",
     "python.formatting.provider": "black",
     "editor.hover.above": false,
+    "markdown.preview.fontSize": 13,
+    "notebook.markup.fontSize": 13,
+    "C_Cpp.intelliSenseEngine": "Tag Parser",
 }
