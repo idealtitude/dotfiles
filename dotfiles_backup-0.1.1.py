@@ -65,6 +65,12 @@ class Backup:
         try:
             with open(self.config_path, 'r') as fd:
                 self.config = json.load(fd)
+                # TODO: Implement validation the json file, here
+                # if not isinstance(self.config.get("paths"), dict):
+                    # raise ValueError("paths must be a dictionary")
+                # if not isinstance(self.config.get("items"), dict):
+                    # raise ValueError("items must be a dictionary")
+                # etc.
                 self.backup_dest = self.config["paths"]["backup"]
                 return True
         except (FileNotFoundError, json.JSONDecodeError, KeyError) as e:
@@ -73,10 +79,6 @@ class Backup:
             self.log.logit("error", f"unexpected config error -> {e}")
         return False # Return False only if an exception occurred
 
-    #def do_backup(self, fpath: str, elem: str) -> None:
-        # flags: str = self.flags
-        # rsync_cmd: list[str] = ["rsync", flags, "--progress", fpath, f"{self.backup_dest}{elem}"]
-        # print(rsync_cmd)
     def do_backup(self, fpath: str, elem: str) -> None:
         rsync_cmd = ["rsync", self.flags, "--progress", fpath, os.path.join(self.backup_dest, elem)]
         try:
@@ -96,7 +98,8 @@ class Backup:
             base_path = self.config.get("paths", {}).get(item_type) if item_type in self.config.get("paths", {}) else self.home if item_type == "home" else None
             if base_path:
                 for item in items:
-                    tmp_path = os.path.join(base_path, item)
+                    #tmp_path = os.path.join(base_path, item)
+                    tmp_path = os.path.normpath(os.path.join(base_path, item))
                     self.do_backup(tmp_path, item)
         return True
 
@@ -126,7 +129,7 @@ def main() -> int:
 
     backup = Backup(flags)
     if backup.config is None:
-        print("\033[91mError:\033[0m can not instantiate the Backup object...")
+        print("\033[91mError:\033[0m ailed to load configuration. Backup aborted")
         return EXIT_FAILURE
 
     return EXIT_SUCCESS
