@@ -7,6 +7,7 @@ App description
 
 import sys
 import os
+import subprocess
 #import re
 
 from typing import Any
@@ -72,10 +73,23 @@ class Backup:
             self.log.logit("error", f"unexpected config error -> {e}")
         return False # Return False only if an exception occurred
 
+    #def do_backup(self, fpath: str, elem: str) -> None:
+        # flags: str = self.flags
+        # rsync_cmd: list[str] = ["rsync", flags, "--progress", fpath, f"{self.backup_dest}{elem}"]
+        # print(rsync_cmd)
     def do_backup(self, fpath: str, elem: str) -> None:
-        flags: str = self.flags
-        rsync_cmd: list[str] = ["rsync", flags, "--progress", fpath, f"{self.backup_dest}{elem}"]
-        print(rsync_cmd)
+        rsync_cmd = ["rsync", self.flags, "--progress", fpath, os.path.join(self.backup_dest, elem)]
+        try:
+            sync_result = subprocess.run(rsync_cmd, capture_output=True, text=True, check=True)  # Capture output
+            self.log.logit("success", f"backed up {fpath} to {self.backup_dest}")
+            # print(sync_result.stdout)  # If you want to see rsync's output
+        except subprocess.CalledProcessError as e:
+            self.log.logit("error", f"rsync failed -> {e}")
+            print(e.stderr)  # Print stderr for debugging
+        except FileNotFoundError:
+            self.log.logit("error", "rsync not found. Is it installed?")
+        except Exception as e:
+            self.log.logit("error", f"an unexpected error occurred -> {e}")
 
     def prepare_backup(self) -> bool:
         for item_type, items in self.config.get("items", {}).items(): # Handle missing "items"
