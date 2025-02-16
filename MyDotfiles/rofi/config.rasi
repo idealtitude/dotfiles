@@ -1,0 +1,7 @@
+configuration {
+    drun-display-format: "{icon} {name}";
+    show-icons: true;
+}
+
+//@theme "/usr/share/rofi/themes/gruvbox-dark.rasi"
+@theme "/usr/share/rofi/themes/Monokai.rasi"
