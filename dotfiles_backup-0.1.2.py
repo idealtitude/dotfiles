@@ -21,7 +21,7 @@ __copyright__    : str       = "Copyright 2025, Stéphane Catalanotto (idealtitu
 __credits__      : list[str] = ["Gemini"]
 __maintainer__   : str       = "idealtitude"
 __date__         : str       = "2025-02-015"
-__version__      : str       = "0.1.1"
+__version__      : str       = "0.1.2"
 __status__       : str       = "Development"
 __license__      : str       = "MT108"
 
