@@ -1,0 +1,20 @@
+{
+    "colorscheme": "twilight",
+    "ignorecase": false,
+    "lsp.autocompleteDetails": false,
+    "lsp.clangd.args": [
+        "-std=c++23",
+        "--log=verbose"
+    ],
+    "lsp.clangd.path": "/usr/bin/clangd",
+    "lsp.formatOnSave": false,
+    "lsp.ignoreMessages": "",
+    "lsp.ignoreTriggerCharacters": "completion,signature",
+    "lsp.server": "python=pyls,cpp=clangd",
+    "lsp.tabcompletion": true,
+    "rmtrailingws": true,
+    "savecursor": true,
+    "softwrap": true,
+    "tabmovement": true,
+    "tabstospaces": true
+}
