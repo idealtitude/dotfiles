@@ -74,4 +74,4 @@ alias dplay="ffplay -hide_banner --showmode 2 -autoexit"
 alias edp='ed -p"% "'
 
 # Quick python server
-#alias pyserv="python -m http.server 8000"
+alias pyserv="python -m http.server 8000"

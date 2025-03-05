@@ -13,9 +13,19 @@ fi
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
+
 export PATH
 
-export PS1='(\[\e[38;5;39m\]\W\[\e[0m\] \[\e[38;5;214m\]\$\[\e[0m\]) \[\e[38;5;212m\]\t\[\e[0m\]\n% '
+# Does not work...
+# if [[ $UID -eq 0 ]]; then
+    # export PS1='(\[\e[38;5;154m\]\w\[\e[0m\] \[\e[38;5;208m\]#\[\e[0m\]) \[\e[38;5;121m\]\t\n\[\e[0m\]% '
+# else
+    # export PS1='(\[\e[38;5;39m\]\W\[\e[0m\] \[\e[38;5;214m\]\$\[\e[0m\]) \[\e[38;5;212m\]\t\[\e[0m\]\n% '
+# fi
+
+# export PS1='(\[\e[38;5;39m\]\W\[\e[0m\] \[\e[38;5;214m\]\$\[\e[0m\]) \[\e[38;5;212m\]\t\[\e[0m\]\n% '
+# export PS1='╭(\[\e[38;5;39m\]\w\[\e[0m\] [\[\e[38;5;226m\]\$\[\e[0m\]]) ─ \[\e[38;5;247m\]\t\n\[\e[0m\]╰> '
+export PS1='╭(\[\e[38;5;39m\]\w\[\e[0m\] \[\e[38;5;247m\][\[\e[38;5;226m\]\$\[\e[38;5;247m\]]\[\e[0m\]) \[\e[38;5;247m\]\t\n\[\e[0m\]╰> '
 
 # My personnal logs path
 export MYLOGS='/home/stephane/Utils/logs'
@@ -34,8 +44,29 @@ shopt -s histappend
 if [ -d ~/.bashrc.d ]; then
     for rc in ~/.bashrc.d/*; do
         if [ -f "$rc" ]; then
-            . "$rc"
+ ²           . "$rc"
         fi
     done
 fi
 unset rc
+
+### zoxide + eza + fzf config
+# eval "$(zoxide init bash)"
+eval "$(zoxide init bash --cmd z)"
+
+# export FZF_DEFAULT_OPTS="
+# Define _ZO_FZF_OPTS as an array
+_ZO_FZF_OPTS=(
+  --height 40%
+  --reverse
+  --border
+  --preview 'eza --tree --color=always --level=2 {} 2>/dev/null'
+)
+
+function zoxide_fzf() {
+  local selected
+  selected=$(zoxide query --list | fzf "${_ZO_FZF_OPTS[@]}") && cd "$selected"
+}
+
+# Alt+Z to launch zoxide + fzf
+bind '"\ez":"zoxide_fzf\n"'

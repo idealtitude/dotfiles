@@ -65,7 +65,7 @@ class Backup:
         try:
             with open(self.config_path, 'r') as fd:
                 self.config = json.load(fd)
-                # TODO: Implement validation the json file, here
+                # TODO: Implement validation of the json file, here
                 # if not isinstance(self.config.get("paths"), dict):
                     # raise ValueError("paths must be a dictionary")
                 # if not isinstance(self.config.get("items"), dict):
@@ -129,7 +129,7 @@ def main() -> int:
 
     backup = Backup(flags)
     if backup.config is None:
-        print("\033[91mError:\033[0m ailed to load configuration. Backup aborted")
+        print("\033[91mError:\033[0m failed to load configuration. Backup aborted")
         return EXIT_FAILURE
 
     return EXIT_SUCCESS
